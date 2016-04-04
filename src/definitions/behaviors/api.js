@@ -723,6 +723,9 @@ $.api = $.fn.api = function(parameters) {
             if(runSettings === undefined) {
               module.error(error.noReturnedValue);
             }
+            if(runSettings === false) {
+              return runSettings;
+            }
             return (runSettings !== undefined)
               ? $.extend(true, {}, runSettings)
               : $.extend(true, {}, settings)

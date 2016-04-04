@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.1.7 - API
+ * # Semantic UI 2.1.8 - API
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -722,6 +722,9 @@ $.api = $.fn.api = function(parameters) {
             }
             if(runSettings === undefined) {
               module.error(error.noReturnedValue);
+            }
+            if(runSettings === false) {
+              return runSettings;
             }
             return (runSettings !== undefined)
               ? $.extend(true, {}, runSettings)
